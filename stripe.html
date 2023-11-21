@@ -48,3 +48,66 @@
   publishable-key="pk_live_51OEGLYJ5jd37MH6fpjEyQBOnqoceRTgUrLoG2XvW8c30UZglVhf3OGqAkrNVssUYUbBv5qixmgc4yolTXVnfw6a900rcXqhC5E"
 >
 </stripe-buy-button>
+
+<script>
+// Importar la biblioteca de Stripe
+import { Elements } from '@stripe/react-stripe-js';
+
+// Crear el formulario de pago
+const PaymentForm = () => {
+  // Crear el elemento de pago
+  const paymentElement = Elements({
+    // Clave API de Stripe
+    publishableKey: "pk_live_51OEGLYJ5jd37MH6fpjEyQBOnqoceRTgUrLoG2XvW8c30UZglVhf3OGqAkrNVssUYUbBv5qixmgc4yolTXVnfw6a900rcXqhC5E",
+  });
+
+  // Añadir el elemento de pago al formulario
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="name" placeholder="Nombre"/>
+      <input type="text" name="surname" placeholder="Apellidos"/>
+      <input type="date" name="birthdate" placeholder="Fecha de nacimiento"/>
+      <input type="email" name="email" placeholder="Correo electrónico"/>
+      <input type="tel" name="phone" placeholder="Teléfono"/>
+      <input type="radio" name="category" value="amateur" checked="checked" /> Amateur
+      <input type="radio" name="category" value="profesional" /> Profesional
+      <input type="number" name="price" placeholder="Importe de la inscripción" />
+      <button type="submit">Pagar</button>
+    </form>
+  );
+};
+
+// Función de envío del formulario
+const handleSubmit = (e) => {
+  // Obtener los datos del formulario
+  const { name, surname, birthdate, email, phone, category, price } = e.target.elements;
+
+  // Crear el objeto de pago
+  const payment = {
+    name,
+    surname,
+    birthdate,
+    email,
+    phone,
+    category,
+    price,
+  };
+
+  // Realizar el pago
+  paymentElement.createPayment(payment, (err, paymentResponse) => {
+    if (err) {
+      // Mostrar el error
+      console.error(err);
+    } else {
+      // Registrar el pago
+      // ...
+    }
+  });
+
+  // Detener la propagación del evento
+  e.preventDefault();
+};
+
+// Renderizar el formulario
+render(<PaymentForm />, document.getElementById("root"));
+</script>
