@@ -1,0 +1,145 @@
+/************************************************************
+ SUPER × NOTION — NARRATIVE + RESPONSIVE PREMIUM
+ Versión: 1.0
+ Autor: ChatGPT
+************************************************************/
+
+/* ───────────────────────────────────────────────
+   1. RESET Y NORMALIZACIÓN
+─────────────────────────────────────────────── */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+*, *:before, *:after { box-sizing: inherit !important; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica", Arial, sans-serif;
+  line-height: 1.65;
+  color: #222;
+  word-wrap: break-word;
+}
+
+/* Contenedor principal de página */
+.notion-page-content,
+.super-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ───────────────────────────────────────────────
+   2. TIPOGRAFÍA Y JUSTIFICADO
+─────────────────────────────────────────────── */
+.notion-text,
+.notion-text p {
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.05rem;
+}
+
+h1, .notion-header { font-size: 2rem; margin: 1.5rem 0 .75rem; text-align: left; }
+h2, .notion-sub_header { font-size: 1.6rem; margin: 1.2rem 0 .6rem; }
+h3, .notion-sub_sub_header { font-size: 1.3rem; margin: 1rem 0 .5rem; }
+
+/* ───────────────────────────────────────────────
+   3. IMÁGENES RESPONSIVE
+─────────────────────────────────────────────── */
+.notion-image,
+.page-width,
+.full-width {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 1.5rem auto !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: block;
+}
+
+.notion-image img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  border-radius: 8px;
+}
+
+.notion-caption {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: .35rem;
+  text-align: center;
+  max-width: 100%;
+  padding: 0 .5rem;
+}
+
+/* Evitar desbordes por padding/margen */
+img, video { max-width: 100% !important; }
+
+/* ───────────────────────────────────────────────
+   4. BLOQUES DE NARRATIVE ORIGINAL
+─────────────────────────────────────────────── */
+
+/* Entradas destacadas / top posts */
+.top-post,
+.featured-post,
+.post-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 1rem 0;
+}
+
+/* Etiquetas de post */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Paneles de navegación ocultos */
+.sidebar-hidden,
+.hide-panel {
+  display: none !important;
+}
+
+/* Contenedores de layout dinámicos */
+.notion-collection,
+.notion-collection-view,
+.super-collection {
+  width: 100% !important;
+}
+
+/* ───────────────────────────────────────────────
+   5. LISTAS, CITAS, TABLAS Y CALL-OUTS
+─────────────────────────────────────────────── */
+.notion-list-item { margin-left: 1.2rem; }
+blockquote {
+  border-left: 4px solid #ccc;
+  margin-left: 0;
+  padding-left: 1rem;
+  opacity: .85;
+}
+.notion-table { width: 100%; overflow-x: auto; }
+.notion-table table { width: 100%; border-collapse: collapse; }
+.notion-callout { border-radius: 12px; padding: 1rem; margin: 1rem 0; }
+
+/* ───────────────────────────────────────────────
+   6. RESPONSIVE
+─────────────────────────────────────────────── */
+@media (min-width: 600px) { .notion-page-content, .super-content { padding: 0 2rem; } }
+@media (min-width: 1100px) { .notion-page-content, .super-content { max-width: 900px; } }
+@media (min-width: 1500px) { .notion-page-content, .super-content { max-width: 1100px; } }
+
+/* ───────────────────────────────────────────────
+   7. BLOQUES ESPECIALES SUPER
+─────────────────────────────────────────────── */
+.super-image-wrapper,
+.notion-asset-wrapper { max-width: 100% !important; width: 100% !important; }
+.super-content [style*="margin-left"] { margin-left: 0 !important; }
+.embed-block { width: 100% !important; overflow-x: auto !important; }
