@@ -1,8 +1,8 @@
 <style>
-  .notion-crop{
+.notion-crop{
   position: relative;
   width: 100%;
-  height: 650px;        /* ajusta a lo que necesites */
+  height: 450px;        /* ajusta a lo que necesites */
   overflow: hidden;     /* clave: oculta lo que “sobra” arriba */
   border-radius: 12px;  /* opcional: look más integrado */
 }
@@ -12,10 +12,10 @@
   left: 0;
   top: -72px;           /* clave: sube el iframe para “cortar” la cabecera */
   width: 100%;
-  height: calc(650px + 72px); /* suma el recorte para no perder altura útil */
+  height: calc(450px + 72px); /* suma el recorte para no perder altura útil */
   border: 0;
 }
 </style>
-<div class="notion-crop">
-  <iframe src="https://robertofernandez.notion.site/ebd//30c63b7ee870804cb86fd10b73a9cdaf" width="100%" height="600" frameborder="0" allowfullscreen />
+<div class="notion-crop" style="border: 1px solid red;">
+  <iframe src="https://robertofernandez.notion.site/ebd//30c63b7ee870804cb86fd10b73a9cdaf" class="notion-frame" frameborder="0" allowfullscreen />
 </div>
