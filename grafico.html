@@ -5,8 +5,6 @@
   height: 400px;        /* ajusta a lo que necesites */
   overflow: hidden;     /* clave: oculta lo que “sobra” arriba */
   border-radius: 12px;  /* opcional: look más integrado */
-  
-  border: 1px solid red;
 }
 
 .notion-frame{
@@ -16,6 +14,7 @@
   width: 100%;
   height: calc(950px + 210px); /* suma el recorte para no perder altura útil */
   border: 0;
+  pointer-events: none;
 }
 </style>
 <div class="notion-crop">
